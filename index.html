@@ -144,7 +144,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .plan-ref{font-size:0.88rem;color:var(--text-muted);text-decoration:line-through;letter-spacing:0.05em}
 .plan-promo{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;margin-top:0.3rem}
 .plan-variant-label{margin-top:0.9rem;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted)}
-.plan-variant-price{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;margin-top:0.2rem} 
+.plan-variant-price{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;margin-top:0.2rem}
 .plan-features{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem}
 .plan-features li{font-size:0.85rem;color:var(--text-muted);display:flex;align-items:center;gap:0.5rem}
 .plan-features li::before{content:'✓';color:var(--gold);font-size:0.7rem;flex-shrink:0}
@@ -169,6 +169,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .ticket-price{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);display:flex;flex-direction:column;align-items:flex-end;line-height:1}
 .ticket-price-old{font-size:1.1rem;color:var(--text-muted);text-decoration:line-through}
 .ticket-price-new{font-size:2rem;color:var(--gold)}
+.ticket-off{margin-top:0.35rem;border:1px solid rgba(248,180,132,0.35);border-radius:999px;padding:0.22rem 0.55rem;font-family:'DM Sans',sans-serif;font-size:0.64rem;letter-spacing:0.16em;text-transform:uppercase;color:#0A0A0A;background:var(--gold);font-weight:600}  
 .gym-schedule{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 4rem 4rem}
 .sched-box{padding:2rem;border:1px solid var(--border)}
 .sched-title{font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
@@ -258,7 +259,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .training-price-table{width:100%;border-collapse:collapse}
 .training-price-table th,.training-price-table td{border:1px solid rgba(168,205,44,0.14);padding:0.6rem 0.7rem;font-size:0.8rem}
 .training-price-table th{background:rgba(168,205,44,0.15);text-transform:uppercase;letter-spacing:0.08em;text-align:left}
-.training-price-table td:last-child{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#b7dc3a;letter-spacing:0.04em}  
+.training-price-table td:last-child{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#b7dc3a;letter-spacing:0.04em}
+.training-price-cell{display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;line-height:1.05}
+.training-price-old{font-size:0.92rem;color:rgba(245,240,232,0.5);text-decoration:line-through}
+.training-price-new{font-size:1.25rem;color:#b7dc3a}
+.training-price-off{font-family:'DM Sans',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#0a0a0a;background:#b7dc3a;border-radius:999px;padding:0.18rem 0.45rem;font-weight:600}
+.training-price-regular{font-size:1.25rem;color:#b7dc3a} 
 .training-cta{margin:1rem 4rem 4rem;border:1px solid rgba(168,205,44,0.28);background:linear-gradient(90deg,rgba(168,205,44,0.18),rgba(10,10,10,0.92));display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:1.6rem 2rem;position:relative;overflow:hidden}
 .training-cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(168,205,44,0.06) 0,rgba(168,205,44,0.06) 1px,transparent 1px,transparent 18px);pointer-events:none}
 .training-cta strong{position:relative;font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:0.08em;color:#b7dc3a}
@@ -707,12 +713,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="gym-tickets reveal">
     <div class="ticket">
-      <div><div class="ticket-name">Plan Semanal</div><div class="ticket-sub"></div></div>
-      <div class="ticket-price gt">$18.000</div>
+      <div><div class="ticket-name">Ticket Semanal</div><div class="ticket-sub">45% OFF Cyber Ossandón</div></div>
+      <div class="ticket-price"><span class="ticket-price-old">$18.000</span><span class="ticket-price-new gt">$9.990</span><span class="ticket-off">45% OFF</span></div>
     </div>
     <div class="ticket">
-      <div><div class="ticket-name">Ticket Diario</div><div class="ticket-sub">Clases dirigidas + Sala de máquinas</div></div>
-      <div class="ticket-price gt">$8.000</div>
+      <div><div class="ticket-name">Ticket Diario</div><div class="ticket-sub">Clases dirigidas + sala de máquinas · 40% OFF</div></div>
+      <div class="ticket-price"><span class="ticket-price-old">$8.000</span><span class="ticket-price-new gt">$4.990</span><span class="ticket-off">40% OFF</span></div>
     </div>
   </div>
 
@@ -811,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="sec-num gt">06 / PLANES TRAINING TEAM</div>
       <h2 class="sec-title">TRAINING<br><span class="gt">TEAM</span></h2>
     </div>
-    <p class="sec-desc">Planes mensuales para Training Fit, fútbol, kids, cheerleading, senior, woman, personalizados y acceso Diamond.</p>
+    <p class="sec-desc">Planes mensuales para Training Fit, fútbol, kids, cheerleading, senior, woman, personalizados y acceso Platinium.</p>
   </div>
   <div class="divider"></div>
 
@@ -863,13 +869,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <table class="training-price-table">
             <thead><tr><th>Programa</th><th>Plan</th><th>Valor</th></tr></thead>
             <tbody>
-              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>8 clases al mes</td><td>$90.000</td></tr>
-              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>12 clases al mes</td><td>$110.000</td></tr>
-              <tr><td>Training Kids (1) y (2)</td><td>4 clases al mes</td><td>$50.000</td></tr>
-              <tr><td>Taekwondo</td><td>8 clases al mes</td><td>$60.000</td></tr>
-              <tr><td>Cheerleader</td><td>4 clases al mes</td><td>$55.000</td></tr>
-              <tr><td>Training Keeper</td><td>4 clases al mes</td><td>$50.000</td></tr>
-              <tr><td>Plan Platinium</td><td>Libre uso de horarios</td><td>$100.000</td></tr>
+              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>8 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$90.000</span><span class="training-price-new">$63.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>12 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$110.000</span><span class="training-price-new">$77.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Training Kids (1) y (2)</td><td>4 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$50.000</span><span class="training-price-new">$35.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Taekwondo</td><td>8 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$60.000</span><span class="training-price-new">$42.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Cheerleader</td><td>4 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$55.000</span><span class="training-price-new">$38.500</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Training Keeper</td><td>4 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$50.000</span><span class="training-price-new">$35.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
+              <tr><td>Plan Platinium</td><td>Libre uso de horarios</td><td><span class="training-price-regular">$100.000</span></td></tr>
             </tbody>
           </table>
         </div>
