@@ -274,6 +274,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .training-actions a:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(168,205,44,0.2)}
 
 
+  /* BENEFICIOS INTEREMPRESA */
+#beneficios-interempresa{position:relative;background:radial-gradient(circle at 18% 10%,rgba(248,180,132,0.14),transparent 30%),linear-gradient(180deg,var(--dark-2),var(--dark) 58%,var(--dark-3));overflow:hidden}
+#beneficios-interempresa::before{content:'INTEREMPRESA';position:absolute;right:-1rem;top:8rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,14vw,13rem);letter-spacing:0.08em;color:rgba(248,180,132,0.035);pointer-events:none}
+.benefits-intro{margin:2rem 4rem 0;display:grid;grid-template-columns:1.1fr 0.9fr;gap:1px;background:var(--border);border:1px solid var(--border);position:relative}
+.benefits-intro-card{background:rgba(17,17,17,0.96);padding:2rem;min-height:100%;display:flex;flex-direction:column;gap:1rem}
+.benefits-kicker{font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold)}
+.benefits-intro-card h3{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:0.95;letter-spacing:0.04em}
+.benefits-intro-card p{color:var(--text-muted);line-height:1.75;font-size:0.92rem}
+.benefits-pill-row{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:auto}
+.benefits-pill{border:1px solid rgba(248,180,132,0.28);border-radius:999px;padding:0.55rem 0.75rem;color:var(--white);background:rgba(248,180,132,0.05);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase}
+.benefits-matrix{margin:2rem 4rem 0;border:1px solid var(--border);background:rgba(10,10,10,0.62);overflow:hidden;position:relative}
+.matrix-title{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);background:var(--dark-3)}
+.matrix-title strong{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:0.12em;text-transform:uppercase}
+.matrix-title span{font-size:0.75rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.benefit-card{background:linear-gradient(160deg,rgba(26,26,26,0.98),rgba(10,10,10,0.98));padding:1.6rem;position:relative;overflow:hidden;min-height:260px;display:flex;flex-direction:column}
+.benefit-card::before{content:'';position:absolute;inset:0 0 auto;height:3px;background:var(--grad)}
+.benefit-card::after{content:'↔';position:absolute;right:1.1rem;top:0.9rem;color:rgba(248,180,132,0.18);font-size:2rem}
+.benefit-route{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.9rem}
+.benefit-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:0.04em;line-height:0.95;margin-bottom:1rem;padding-right:2rem}
+.benefit-highlight{border-left:2px solid var(--gold);padding-left:0.9rem;color:var(--white);line-height:1.55;font-size:0.9rem;margin-bottom:1rem}
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-top:auto}
+.benefit-list li{color:var(--text-muted);font-size:0.82rem;line-height:1.5;display:flex;gap:0.55rem}
+.benefit-list li::before{content:'✓';color:var(--gold);font-size:0.75rem;margin-top:0.05rem;flex-shrink:0}
+.benefits-conditions{margin:2rem 4rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.condition-card{background:var(--dark-2);padding:1.35rem}
+.condition-card strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:0.12em;color:var(--gold);margin-bottom:0.55rem;text-transform:uppercase}
+.condition-card span{display:block;color:var(--text-muted);font-size:0.78rem;line-height:1.65}
+
+
+
 /* FOOTER */
 footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:4rem;align-items:start}
 .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:0.2em;line-height:1}
@@ -316,6 +347,10 @@ footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--bor
   .training-tables{grid-template-columns:1fr}
   .training-cta{margin:1.5rem;padding:1.4rem;grid-template-columns:1fr}
   .training-actions{justify-content:flex-start}
+  
+  .benefits-intro,.benefits-matrix,.benefits-conditions{margin-left:1.5rem;margin-right:1.5rem}
+  .benefits-intro,.benefits-grid,.benefits-conditions{grid-template-columns:1fr}
+  .matrix-title{align-items:flex-start;flex-direction:column}
   footer{padding:4rem 1.5rem;grid-template-columns:1fr;gap:2rem}
   .foot-bottom{flex-direction:column;gap:1rem;text-align:center}
   .svc-row{grid-template-columns:1fr}
@@ -335,13 +370,14 @@ footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--bor
     <li><a href="#boxeo">Boxeo</a></li>
     <li><a href="#training-team">Training Team</a></li>
     <li><a href="#kinesio">Kinesiología</a></li>
+    <li><a href="#beneficios-interempresa">Beneficios</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
- const orderedIds = ['gimnasio', 'tenis', 'academia', 'boxeo', 'kinesio', 'training-team'];
+ const orderedIds = ['gimnasio', 'tenis', 'academia', 'boxeo', 'kinesio', 'training-team', 'beneficios-interempresa'];
   const anchorSection = document.querySelector('section.hero');
   if (!anchorSection || !anchorSection.parentNode) return;
 
@@ -893,6 +929,91 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </section>
 
+  
+<!-- BENEFICIOS INTEREMPRESA -->
+<section id="beneficios-interempresa">
+  <div class="sec-header reveal">
+    <div>
+      <div class="sec-num gt">07 / Book de Beneficios</div>
+      <h2 class="sec-title">Descuentos<br><span class="gt">Interempresa</span></h2>
+    </div>
+    <p class="sec-desc">Una guía simple para entender qué beneficio recibe cada cliente cuando ya pertenece a un área del club y quiere usar otra. La lógica es cruzada: mientras mantenga un plan vigente, puede acceder a condiciones preferentes en las demás empresas del ecosistema Club Ossandón.</p>
+  </div>
+  <div class="divider"></div>
+
+  <div class="benefits-intro reveal">
+    <div class="benefits-intro-card">
+      <div class="benefits-kicker">Cómo leer este apartado</div>
+      <h3>Si eres cliente de un área, mira qué puertas se abren en las otras.</h3>
+      <p>Cada tarjeta indica el origen del cliente y el beneficio disponible en la empresa de destino. Es una forma rápida de explicar el valor agregado del club: más deporte, más salud y mejores precios dentro de una misma comunidad.</p>
+      <div class="benefits-pill-row">
+        <span class="benefits-pill">Plan vigente</span>
+        <span class="benefits-pill">Beneficio personal</span>
+        <span class="benefits-pill">No transferible</span>
+      </div>
+    </div>
+    <div class="benefits-intro-card">
+      <div class="benefits-kicker">Empresas consideradas</div>
+      <h3>Gimnasio · Kinersys · Contender · Tenis</h3>
+      <p>Los beneficios aplican para clientes activos de Contender, Academia de Tenis, Kinersys y Gimnasio. Están sujetos a disponibilidad, horarios, cupos y políticas internas de cada área.</p>
+      <div class="benefits-pill-row">
+        <span class="benefits-pill">Costo cero matrícula</span>
+        <span class="benefits-pill">50% gimnasio</span>
+        <span class="benefits-pill">10% Contender</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits-matrix reveal">
+    <div class="matrix-title">
+      <strong>Matriz rápida de beneficios</strong>
+      <span>Origen del cliente → beneficio disponible</span>
+    </div>
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <div class="benefit-route">Contender · Tenis · Kinersys → Gimnasio</div>
+        <h4>Acceso preferente a Gimnasio</h4>
+        <p class="benefit-highlight">Clientes de estas áreas obtienen matrícula sin costo y plan mensual preferencial al 50% del precio de lista.</p>
+        <ul class="benefit-list">
+          <li>Acceso liberado a instalaciones del gimnasio.</li>
+          <li>Acceso a clases dirigidas según disponibilidad.</li>
+          <li>Rutina de entrenamiento elaborada por profesor de educación física.</li>
+          <li>Evaluación InBody: 1 medición mensual sin costo.</li>
+        </ul>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-route">Contender · Tenis · Gimnasio → Kinersys</div>
+        <h4>Kinesiología con valores club</h4>
+        <p class="benefit-highlight">Clientes de estas áreas pueden acceder a evaluación Kinersys por $20.000 y sesiones mensuales preferentes.</p>
+        <ul class="benefit-list">
+          <li>Evaluación kinésica coordinada directamente con Kinersys.</li>
+          <li>12 sesiones de kinesiología al mes por $70.000.</li>
+          <li>Ideal para prevención, recuperación y continuidad deportiva.</li>
+        </ul>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-route">Kinersys · Tenis · Gimnasio → Contender</div>
+        <h4>Ingreso directo a Contender</h4>
+        <p class="benefit-highlight">Clientes de Kinersys, Tenis y Gimnasio reciben 100% de descuento en matrícula para integrarse a Contender.</p>
+        <ul class="benefit-list">
+          <li>Matrícula gratis para comenzar sin barrera de entrada.</li>
+          <li>10% de descuento en todos los planes Contender.</li>
+          <li>Beneficio no acumulable con otras promociones.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <div class="benefits-conditions reveal">
+    <div class="condition-card"><strong>Vigencia</strong><span>El cliente debe mantener un plan activo en cualquiera de las áreas indicadas para acceder al cruce de beneficios.</span></div>
+    <div class="condition-card"><strong>Uso personal</strong><span>Los beneficios son personales e intransferibles; no aplican para terceros ni acompañantes.</span></div>
+    <div class="condition-card"><strong>Coordinación</strong><span>Horarios, cupos y evaluaciones deben confirmarse directamente con el área correspondiente.</span></div>
+    <div class="condition-card"><strong>Condición comercial</strong><span>Los descuentos pueden modificarse, suspenderse o no acumularse con campañas especiales.</span></div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contacto">
   <div>
@@ -910,4 +1031,12 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="foot-sec">
     <h4>Redes Sociales</h4>
     <div class="foot-item"><span class="foot-label">Instagram</span><span class="foot-val">@clubossandon_sportscenter</span></div>
-    <div class="foot-item"><span class="foot-lab
+    <div class="foot-item"><span class="foot-label">Ubicación</span><span class="foot-val">La Reina, Santiago</span></div>
+  </div>
+  <div class="foot-bottom">
+    <span>Carpeta de Ventas 2026</span>
+    <span>Club Ossandón Sports Center</span>
+  </div>
+</footer>
+</body>
+</html>
