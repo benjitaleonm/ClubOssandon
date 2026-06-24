@@ -82,15 +82,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 
 /* ACADEMIA */
 #academia{position:relative;background:var(--dark)}
-.academia-layout{display:grid;grid-template-columns:1fr 1fr;margin:3rem 0}
-.ac-col{padding:3rem 4rem;border-top:1px solid var(--border)}
-.ac-col:first-child{border-right:1px solid var(--border)}
+.academia-layout{display:grid;grid-template-columns:repeat(3,1fr);margin:3rem 0}
+.ac-col{padding:3rem 4rem;border-top:1px solid var(--border);border-right:1px solid var(--border)}
+.ac-col:last-child{border-right:none}
 .col-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.1em;margin-bottom:0.5rem}
 .col-sub{font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:2.5rem}
 .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;border-bottom:1px solid rgba(248,180,132,0.08);transition:padding 0.2s}
 .price-row:hover{padding-left:0.5rem}
 .pr-clases{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--white)}
 .pr-amount{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--gold);letter-spacing:0.05em}
+.pr-old{font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--text-muted);text-decoration:line-through;margin-right:0.5rem;letter-spacing:0}  
 .prueba-badge{display:flex;align-items:center;gap:1rem;padding:1.2rem 2rem;background:linear-gradient(135deg,rgba(248,180,132,0.08),rgba(248,180,132,0.03));border:1px solid var(--border);margin:2rem 4rem;font-size:0.8rem;color:var(--text-muted)}
 .prueba-badge strong{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.1em}
 .rules-list{margin:0 4rem 4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
@@ -493,12 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="academia-layout reveal">
     <div class="ac-col">
       <div class="col-title gt">Clases Grupales Adultos AM &amp; Infantiles</div>
-      <div class="col-sub">Lunes a Viernes AM · Mar-Jue 17-18h · Sáb 10-11h</div>
-      <div class="price-row"><span class="pr-clases">1 clase / mes</span><span class="pr-amount">$19.000</span></div>
-      <div class="price-row"><span class="pr-clases">4 clases / mes</span><span class="pr-amount">$68.000</span></div>
-      <div class="price-row"><span class="pr-clases">6 clases / mes</span><span class="pr-amount">$90.000</span></div>
-      <div class="price-row"><span class="pr-clases">8 clases / mes</span><span class="pr-amount">$112.000</span></div>
-      <div class="price-row"><span class="pr-clases">12 clases / mes</span><span class="pr-amount">$156.000</span></div>
+      <div class="col-sub">Lunes a Viernes horarios AM</div>
     </div>
     <div class="ac-col">
       <div class="col-title gt">Clases Grupales Adultos PM</div>
@@ -506,8 +502,23 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="price-row"><span class="pr-clases">1 clase / mes</span><span class="pr-amount">$21.000</span></div>
       <div class="price-row"><span class="pr-clases">4 clases / mes</span><span class="pr-amount">$71.000</span></div>
       <div class="price-row"><span class="pr-clases">6 clases / mes</span><span class="pr-amount">$99.000</span></div>
-      <div class="price-row"><span class="pr-clases">8 clases / mes</span><span class="pr-amount">$116.000</span></div>
-      <div class="price-row"><span class="pr-clases">12 clases / mes</span><span class="pr-amount">$156.000</span></div>
+      <div class="price-row"><span class="pr-clases">8 clases / mes</span><span class="pr-amount">$120.000</span></div>
+      <div class="price-row"><span class="pr-clases">12 clases / mes</span><span class="pr-amount">$168.000</span></div>
+    </div>
+    <div class="ac-col">
+      <div class="col-title gt">Clases Grupales Adultos PM</div>
+      <div class="col-sub">PM de 16:00 a 22:00 · Feriados · Sábados de 08:00 a 12:00</div>
+      <div class="price-row"><span class="pr-clases">1 clase / mes</span><span class="pr-amount">$22.500</span></div>
+      <div class="price-row"><span class="pr-clases">4 clases / mes</span><span class="pr-amount">$75.000</span></div>
+      <div class="price-row"><span class="pr-clases">6 clases / mes</span><span class="pr-amount">$105.000</span></div>
+      <div class="price-row"><span class="pr-clases">8 clases / mes</span><span class="pr-amount">$124.000</span></div>
+      <div class="price-row"><span class="pr-clases">12 clases / mes</span><span class="pr-amount">$180.000</span></div>
+    </div>
+    <div class="ac-col">
+      <div class="col-title gt">Clases Grupales Domingos</div>
+      <div class="col-sub">Domingos de 08:00 a 13:00</div>
+      <div class="price-row"><span class="pr-clases">1 clase / mes</span><span><span class="pr-old">$23.000</span><span class="pr-amount">$20.700</span></span></div>
+      <div class="price-row"><span class="pr-clases">4 clases / mes</span><span><span class="pr-old">$75.000</span><span class="pr-amount">$67.500</span></span></div>
     </div>
   </div>
 
