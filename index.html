@@ -250,22 +250,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .training-price{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;color:#b7dc3a;white-space:nowrap}
 .training-note{margin:1rem 0 0;color:var(--text-muted);font-size:0.78rem;letter-spacing:0.08em;line-height:1.6;text-transform:uppercase}
 .training-card .training-note:last-child{margin-top:auto;padding-top:1rem}
-.training-tables{display:grid;grid-template-columns:1.6fr 1fr;gap:1rem}
-.training-table-wrap{border:1px solid rgba(168,205,44,0.25);background:rgba(10,10,10,0.88);overflow:auto}
-.training-table-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.12em;padding:0.9rem 1rem;border-bottom:1px solid rgba(168,205,44,0.2);color:#b7dc3a;text-transform:uppercase}
-.training-table{width:100%;border-collapse:collapse;min-width:640px}
-.training-table th,.training-table td{border:1px solid rgba(168,205,44,0.14);padding:0.55rem 0.65rem;font-size:0.78rem;text-align:left;vertical-align:top}
-.training-table th{background:rgba(168,205,44,0.15);text-transform:uppercase;letter-spacing:0.08em}
-.training-table td:first-child,.training-table th:first-child{white-space:nowrap;width:75px}
-.training-price-table{width:100%;border-collapse:collapse}
-.training-price-table th,.training-price-table td{border:1px solid rgba(168,205,44,0.14);padding:0.6rem 0.7rem;font-size:0.8rem}
-.training-price-table th{background:rgba(168,205,44,0.15);text-transform:uppercase;letter-spacing:0.08em;text-align:left}
-.training-price-table td:last-child{text-align:right;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#b7dc3a;letter-spacing:0.04em}
-.training-price-cell{display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;line-height:1.05}
-.training-price-old{font-size:0.92rem;color:rgba(245,240,232,0.5);text-decoration:line-through}
-.training-price-new{font-size:1.25rem;color:#b7dc3a}
-.training-price-off{font-family:'DM Sans',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:#0a0a0a;background:#b7dc3a;border-radius:999px;padding:0.18rem 0.45rem;font-weight:600}
-.training-price-regular{font-size:1.25rem;color:#b7dc3a} 
+.training-pricing-focus{display:flex;flex-direction:column;gap:1rem}
+.training-price-hero{border:1px solid rgba(168,205,44,0.34);background:linear-gradient(145deg,rgba(168,205,44,0.16),rgba(10,10,10,0.95) 58%);padding:1.7rem;position:relative;overflow:hidden}
+.training-price-hero::after{content:'30% OFF';position:absolute;right:-0.7rem;top:1.2rem;font-family:'Bebas Neue',sans-serif;font-size:3.8rem;letter-spacing:0.08em;color:rgba(168,205,44,0.08);transform:rotate(-8deg)}
+.training-price-eyebrow{font-size:0.72rem;letter-spacing:0.24em;text-transform:uppercase;color:#b7dc3a;margin-bottom:0.7rem}
+.training-price-hero h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.7rem,5vw,4.4rem);line-height:0.9;letter-spacing:0.03em;margin-bottom:0.9rem}
+.training-price-hero p{color:rgba(245,240,232,0.72);font-size:0.9rem;line-height:1.7;max-width:42rem}
+.training-highlight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.85rem;margin-top:1.4rem}
+.training-highlight-card{border:1px solid rgba(168,205,44,0.28);background:rgba(255,255,255,0.035);padding:1.2rem}
+.training-highlight-card span{display:block;color:rgba(245,240,232,0.68);font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.35rem}
+.training-highlight-card strong{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.5rem);line-height:1;color:#b7dc3a}
+.training-highlight-card small{display:block;color:rgba(245,240,232,0.48);font-size:0.76rem;margin-top:0.45rem;line-height:1.5}
+.training-price-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.training-price-box{border:1px solid rgba(168,205,44,0.24);background:rgba(10,10,10,0.86);padding:1.35rem;position:relative;overflow:hidden}
+.training-price-box.wide{grid-column:1/-1}
+.training-price-box::before{content:'';position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#111,#b7dc3a,#e6ff78)}
+.training-price-box h4{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;letter-spacing:0.08em;margin-bottom:0.35rem}
+.training-price-box p{color:var(--text-muted);font-size:0.8rem;line-height:1.55;margin-bottom:1rem}
+.training-price-list{display:flex;flex-direction:column;gap:0.7rem}
+.training-price-item{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;border-bottom:1px solid rgba(168,205,44,0.1);padding-bottom:0.7rem}
+.training-price-item:last-child{border-bottom:none;padding-bottom:0}
+.training-price-item span{color:rgba(245,240,232,0.82);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem}
+.training-price-item strong{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;color:#b7dc3a;white-space:nowrap;line-height:1}
+.training-price-item small{display:block;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-style:normal;font-size:0.72rem;margin-top:0.25rem}
+.training-discount-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(168,205,44,0.22);border:1px solid rgba(168,205,44,0.24)}
+.training-discount-strip div{background:rgba(17,17,17,0.96);padding:1rem;text-align:center}
+.training-discount-strip strong{display:block;font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#b7dc3a}
+.training-discount-strip span{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted)} 
 .training-cta{margin:1rem 4rem 4rem;border:1px solid rgba(168,205,44,0.28);background:linear-gradient(90deg,rgba(168,205,44,0.18),rgba(10,10,10,0.92));display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:1.6rem 2rem;position:relative;overflow:hidden}
 .training-cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(100deg,rgba(168,205,44,0.06) 0,rgba(168,205,44,0.06) 1px,transparent 1px,transparent 18px);pointer-events:none}
 .training-cta strong{position:relative;font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:0.08em;color:#b7dc3a}
@@ -345,7 +356,7 @@ footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--bor
   .training-selector{grid-template-columns:1fr 1fr}
   .training-plans{grid-template-columns:1fr}
   .training-card,.training-card.featured{grid-column:auto}
-  .training-tables{grid-template-columns:1fr}
+  .training-price-sections,.training-highlight-grid,.training-discount-strip{grid-template-columns:1fr}
   .training-cta{margin:1.5rem;padding:1.4rem;grid-template-columns:1fr}
   .training-actions{justify-content:flex-start}
   
@@ -872,53 +883,58 @@ document.addEventListener('DOMContentLoaded', () => {
     </aside>
 
     <div class="training-dashboard">
-      <div class="training-selector" aria-label="Accesos rápidos a planes Training Team">
-        <a href="#tt-fit"><strong>Training Fit</strong><span>8 · 12 · 20 clases</span></a>
-        <a href="#tt-futbol"><strong>Training Fut</strong><span>Fútbol mensual</span></a>
-        <a href="#tt-kids"><strong>Kids</strong><span>2 a 17 años</span></a>
-        <a href="#tt-cheer"><strong>Cheerleading</strong><span>6 a 12 años</span></a>
-        <a href="#tt-senior"><strong>Senior</strong><span>8 · 12 · 20 clases</span></a>
-        <a href="#tt-woman"><strong>Woman</strong><span>8 · 12 · 20 clases</span></a>
-        <a href="#tt-personal"><strong>Personalizados</strong><span>4 · 8 clases</span></a>
-        <a href="#tt-diamond"><strong>Diamond</strong><span>Acceso libre</span></a>
+        <div class="training-selector" aria-label="Accesos rápidos a precios Training Team">
+        <a href="#tt-funcional"><strong>Funcional</strong><span>Fit · Woman · Senior · Soccer</span></a>
+        <a href="#tt-escuelas"><strong>Escuelas</strong><span>Taekwondo · Kids · Cheer</span></a>
+        <a href="#tt-personal"><strong>Personalizados</strong><span>Clases 1 a 1</span></a>
+        <a href="#tt-descuentos"><strong>Descuentos</strong><span>Trimestral · Semestral · Anual</span></a>
       </div>
-      <div class="training-tables">
-        <div class="training-table-wrap">
-          <div class="training-table-title">Horario Training Team</div>
-          <table class="training-table">
-            <thead><tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th></tr></thead>
-            <tbody>
-              <tr><td>7:10</td><td>Training Fit</td><td></td><td>Training Fit</td><td></td><td>Training Fit</td><td></td></tr>
-              <tr><td>9:00</td><td>Training Fit</td><td>Training Fit</td><td>Training Fit</td><td>Training Fit</td><td>Training Fit</td><td>Training Kids (2)</td></tr>
-              <tr><td>10:00</td><td></td><td></td><td></td><td></td><td></td><td>Training Kids (1)</td></tr>
-              <tr><td>11:00</td><td>Training Senior</td><td>Training Woman</td><td>Training Senior</td><td>Training Woman</td><td></td><td>Training Kids (1)</td></tr>
-              <tr><td>12:00</td><td></td><td></td><td></td><td></td><td>Personalizado</td><td></td></tr>
-              <tr><td>15:00</td><td></td><td></td><td></td><td>Personalizado</td><td>Cheerleader</td><td>Taekwondo</td></tr>
-              <tr><td>16:00</td><td></td><td></td><td>Training Senior</td><td></td><td>Cheerleader</td><td></td></tr>
-              <tr><td>17:00</td><td>Training Kids (2)</td><td>Taekwondo</td><td>Training Kids (2)</td><td>Personalizado</td><td>Training Keeper</td><td></td></tr>
-              <tr><td>18:00</td><td>Personalizado</td><td></td><td>Personalizado</td><td>Personalizado</td><td>Taekwondo</td><td></td></tr>
-              <tr><td>19:00</td><td>Training Fit</td><td>Training Woman</td><td>Training Fit</td><td>Training Kids (2)</td><td>Training Fit (19:30)</td><td></td></tr>
-              <tr><td>20:00</td><td>Training Soccer</td><td>Training Fit</td><td>Training Woman</td><td>Training Kids (2)</td><td></td><td></td></tr>
-              <tr><td>21:00</td><td>Training Soccer</td><td></td><td>Training Soccer</td><td>Training Woman (20:30)</td><td></td><td></td></tr>
-            </tbody>
-          </table>
+      
+      <div class="training-pricing-focus">
+        <div class="training-price-hero" id="tt-funcional">
+          <div class="training-price-eyebrow">Entrenamiento funcional · primer mes 30% OFF</div>
+          <h3>Precios claros para empezar hoy</h3>
+          <p>Valores actualizados para Training Fit, Woman, Seniors y Soccer. La matrícula es de $15.000 e incluye evaluación kinésica.</p>
+          <div class="training-highlight-grid">
+            <div class="training-highlight-card">
+              <span>8 clases al mes</span>
+              <strong>$42.000</strong>
+              <small>Precio primer mes con 30% de descuento · valor normal $60.000.</small>
+            </div>
+            <div class="training-highlight-card">
+              <span>12 clases al mes</span>
+              <strong>$49.000</strong>
+              <small>Precio primer mes con 30% de descuento · valor normal $70.000.</small>
+            </div>
+          </div>
         </div>
-        <div class="training-table-wrap">
-          <div class="training-table-title">Valores Training Team</div>
-          <table class="training-price-table">
-            <thead><tr><th>Programa</th><th>Plan</th><th>Valor</th></tr></thead>
-            <tbody>
-              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>8 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$90.000</span><span class="training-price-new">$63.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
-              <tr><td>Training Fit / Woman / Senior / Soccer</td><td>12 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$110.000</span><span class="training-price-new">$77.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
-              <tr><td>Personalizados</td><td>4 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$160.000</span><span class="training-price-new">$112.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
-              <tr><td>Personalizados</td><td>8 clases al mes</td><td><span class="training-price-cell"><span class="training-price-old">$220.000</span><span class="training-price-new">$161.000</span><span class="training-price-off">30% OFF</span></span></td></tr>
-              <tr><td>Training Kids (1) y (2)</td><td>4 clases al mes</td><td><span class="training-price-regular">$50.000</span></td></tr>
-              <tr><td>Taekwondo</td><td>8 clases al mes</td><td><span class="training-price-regular">$60.000</span></td></tr>
-              <tr><td>Cheerleader</td><td>4 clases al mes</td><td><span class="training-price-regular">$55.000</span></td></tr>
-              <tr><td>Training Keeper</td><td>4 clases al mes</td><td><span class="training-price-regular">$50.000</span></td></tr>
-              <tr><td>Plan Platinium</td><td>Libre uso de horarios</td><td><span class="training-price-regular">$100.000</span></td></tr>
-            </tbody>
-          </table>
+
+        <div class="training-discount-strip" id="tt-descuentos" aria-label="Descuentos por permanencia Training Team">
+          <div><strong>15%</strong><span>Plan trimestral</span></div>
+          <div><strong>20%</strong><span>Plan semestral</span></div>
+          <div><strong>30%</strong><span>Plan anual</span></div>
+        </div>
+        
+        <div class="training-price-sections">
+          <div class="training-price-box" id="tt-escuelas">
+            <h4>Escuelas deportivas</h4>
+            <p>Matrícula anual $70.000. Incluye evaluación kinésica y uniforme.</p>
+            <div class="training-price-list">
+              <div class="training-price-item"><span>Taekwondo desde los 6 años<small>8 clases al mes</small></span><strong>$60.000</strong></div>
+              <div class="training-price-item"><span>Training Kids Fútbol 3 a 5 años<small>4 clases al mes</small></span><strong>$50.000</strong></div>
+              <div class="training-price-item"><span>Cheerleaders<small>4 clases al mes</small></span><strong>$55.000</strong></div>
+              <div class="training-price-item"><span>Training Keeper<small>Arqueros fútbol · 4 clases al mes</small></span><strong>$50.000</strong></div>
+            </div>
+          </div>
+
+          <div class="training-price-box" id="tt-personal">
+            <h4>Personalizados 1 a 1</h4>
+            <p>Entrenamiento individual con foco en objetivos personales.</p>
+            <div class="training-price-list">
+              <div class="training-price-item"><span>4 clases al mes</span><strong>$120.000</strong></div>
+              <div class="training-price-item"><span>8 clases al mes</span><strong>$160.000</strong></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -926,8 +942,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <div class="training-cta reveal">
     <div>
-           <strong>Matrícula general <span class="training-price-old">$85.000</span> <span class="training-price-new">$59.500</span></strong>
-      <span>Escuelas deportivas: matrícula anual $70.000 · 30% descuento anual para planes Fit/Woman/Senior/Soccer.</span>
+            <strong>Agenda tu evaluación y elige el plan Training Team ideal para ti</strong>
+      <span>Funcional: matrícula $15.000 con evaluación kinésica · Escuelas deportivas: matrícula anual $70.000 con evaluación kinésica y uniforme.</span>
     </div>
     <div class="training-actions">
       <a href="mailto:trainingteam.cl@gmail.com">trainingteam.cl@gmail.com</a>
