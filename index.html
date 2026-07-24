@@ -319,6 +319,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 
 /* FOOTER */
 footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;gap:4rem;align-items:start}
+.partners-footer{grid-column:1/-1;margin:-6rem -4rem 1rem;padding:1.15rem 0;border-bottom:1px solid var(--border);background:#0d0d0d;overflow:hidden}
+.partners-footer__title{padding:0 4rem 0.8rem;font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold)}
+.partners-footer__viewport{overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 7%,black 93%,transparent)}
+.partners-footer__track{width:max-content;display:flex;align-items:center;animation:partnersMarquee 46s linear infinite;will-change:transform}
+.partners-footer:hover .partners-footer__track,.partners-footer:focus-within .partners-footer__track{animation-play-state:paused}
+.partner-list{display:flex;align-items:center;gap:0;padding-right:1.25rem;list-style:none}
+.partner-link{min-width:12.5rem;height:4.4rem;padding:0 1.25rem;display:flex;align-items:center;gap:0.8rem;color:var(--white);text-decoration:none;border:1px solid transparent;transition:border-color .25s ease,background .25s ease,transform .25s ease}
+.partner-link:hover,.partner-link:focus-visible{background:rgba(248,180,132,0.08);border-color:var(--border);transform:translateY(-3px);outline:none}
+.partner-mark{width:2.5rem;height:2.5rem;flex:0 0 2.5rem;display:grid;place-items:center;border:1px solid rgba(248,180,132,0.52);border-radius:50%;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.04em;color:var(--gold)}
+.partner-name{font-size:0.72rem;font-weight:500;line-height:1.25;letter-spacing:0.08em;text-transform:uppercase;white-space:normal}  
 .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:0.2em;line-height:1}
 .foot-tag{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-muted);margin-top:0.5rem;font-size:0.9rem}
 .foot-sec h4{font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
@@ -331,6 +341,7 @@ footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--bor
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scrollLine{from{left:-100%}to{left:100%}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes partnersMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}  
 .reveal{opacity:1;transform:translateY(0);transition:opacity 0.8s ease,transform 0.8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}.d4{transition-delay:0.4s}
@@ -364,9 +375,14 @@ footer{background:var(--dark-2);padding:6rem 4rem;border-top:1px solid var(--bor
   .benefits-intro,.benefits-grid,.benefits-conditions{grid-template-columns:1fr}
   .matrix-title{align-items:flex-start;flex-direction:column}
   footer{padding:4rem 1.5rem;grid-template-columns:1fr;gap:2rem}
+  .partners-footer{margin:-4rem -1.5rem 1rem}
+  .partners-footer__title{padding-left:1.5rem}
+  .partner-link{min-width:10.5rem;height:4rem;padding:0 .85rem}
   .foot-bottom{flex-direction:column;gap:1rem;text-align:center}
   .svc-row{grid-template-columns:1fr}
 }
+
+@media(prefers-reduced-motion:reduce){.partners-footer__track{animation:none}.partners-footer__viewport{overflow-x:auto;mask-image:none}}  
 </style>
 </head>
 <body>
@@ -1040,6 +1056,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- FOOTER -->
 <footer id="contacto">
+  <section class="partners-footer" aria-labelledby="partners-title">
+    <h2 class="partners-footer__title" id="partners-title">Alianzas y marcas</h2>
+    <div class="partners-footer__viewport">
+      <div class="partners-footer__track">
+        <ul class="partner-list">
+          <li><a class="partner-link" href="#contacto" aria-label="Diplomados MD"><span class="partner-mark" aria-hidden="true">MD</span><span class="partner-name">Diplomados MD</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="SAR La Reina"><span class="partner-mark" aria-hidden="true">SR</span><span class="partner-name">SAR La Reina</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="AIR"><span class="partner-mark" aria-hidden="true">AIR</span><span class="partner-name">AIR</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Colegio NSDC"><span class="partner-mark" aria-hidden="true">NS</span><span class="partner-name">Colegio NSDC</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Colegio Etievan"><span class="partner-mark" aria-hidden="true">CE</span><span class="partner-name">Colegio Etievan</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Ejército de Chile"><span class="partner-mark" aria-hidden="true">EC</span><span class="partner-name">Ejército de Chile</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="CESFAM La Reina"><span class="partner-mark" aria-hidden="true">CL</span><span class="partner-name">CESFAM La Reina</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Tarjeta Vecino"><span class="partner-mark" aria-hidden="true">TV</span><span class="partner-name">Tarjeta Vecino</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Deportes y Recreación de La Reina"><span class="partner-mark" aria-hidden="true">DR</span><span class="partner-name">Deportes y Recreación · La Reina</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Casona Nemecio Antúnez"><span class="partner-mark" aria-hidden="true">CN</span><span class="partner-name">Casona Nemecio Antúnez</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="ClassPass"><span class="partner-mark" aria-hidden="true">CP</span><span class="partner-name">ClassPass</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Wellhub"><span class="partner-mark" aria-hidden="true">WH</span><span class="partner-name">Wellhub</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="SportPro TV"><span class="partner-mark" aria-hidden="true">SP</span><span class="partner-name">SportPro TV</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Sporting Brands"><span class="partner-mark" aria-hidden="true">SB</span><span class="partner-name">Sporting Brands</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Rafa Nadal Academy"><span class="partner-mark" aria-hidden="true">RN</span><span class="partner-name">Rafa Nadal Academy</span></a></li>
+          <li><a class="partner-link" href="#contacto" aria-label="Decathlon"><span class="partner-mark" aria-hidden="true">DC</span><span class="partner-name">Decathlon</span></a></li>
+        </ul>
+        <ul class="partner-list" aria-hidden="true">
+          <li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">MD</span><span class="partner-name">Diplomados MD</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">SR</span><span class="partner-name">SAR La Reina</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">AIR</span><span class="partner-name">AIR</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">NS</span><span class="partner-name">Colegio NSDC</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">CE</span><span class="partner-name">Colegio Etievan</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">EC</span><span class="partner-name">Ejército de Chile</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">CL</span><span class="partner-name">CESFAM La Reina</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">TV</span><span class="partner-name">Tarjeta Vecino</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">DR</span><span class="partner-name">Deportes y Recreación · La Reina</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">CN</span><span class="partner-name">Casona Nemecio Antúnez</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">CP</span><span class="partner-name">ClassPass</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">WH</span><span class="partner-name">Wellhub</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">SP</span><span class="partner-name">SportPro TV</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">SB</span><span class="partner-name">Sporting Brands</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">RN</span><span class="partner-name">Rafa Nadal Academy</span></a></li><li><a class="partner-link" href="#contacto" tabindex="-1"><span class="partner-mark">DC</span><span class="partner-name">Decathlon</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
   <div>
     <div class="foot-logo gt">Club<br>Ossandón</div>
     <div class="foot-tag">Sports Center · La Reina, Santiago</div>
